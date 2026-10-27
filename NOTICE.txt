@@ -1,0 +1,6 @@
+Cray FLP Analyzer — prototype source
+Copyright (c) 2026 Cray LDR
+
+This prototype source is provided for personal development and testing.
+It is not affiliated with or endorsed by Image-Line.
+The FL Studio / FLP format is proprietary. Do not imply official compatibility certification.

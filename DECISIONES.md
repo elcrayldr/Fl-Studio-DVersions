@@ -1,0 +1,7 @@
+# Decisiones técnicas
+- **Python + tkinter, solo biblioteca estándar.** Sin dependencias de terceros en ejecución: simplifica licencias y empaquetado.
+- **PyFLP / flpdiff y similares: no evaluados ni incorporados.** El entorno de desarrollo no tenía acceso a Internet, así que no se pudieron comprobar su licencia, mantenimiento ni compatibilidad. Se escribió un lector propio del contenedor (FLhd/FLdt + eventos) que conserva byte a byte lo que no interpreta. Revisar esas bibliotecas (y su licencia, que puede ser copyleft) es una tarea pendiente antes de integrarlas.
+- **Confianza en tres niveles:** *confirmado* (estructura del contenedor), *inferido* (significado de ids por documentación comunitaria, sin verificar), *desconocido* (eventos no interpretados).
+- **Reparaciones implementadas:** (1) recortar la cola incompleta de un archivo truncado y recalcular el tamaño de FLdt; (2) reemplazar rutas de sample confirmadas por el usuario (evento de ruta, con codificación derivada de la versión). Nada más.
+- **Conversión entre versiones: no implementada.** Cambiar cabeceras o números de versión no convierte un proyecto, y no hay método verificado. La app solo *evalúa* (no hace falta / degradación no soportada / necesita reparación / origen desconocido) y no genera archivos en esos casos.
+- **Plugins:** solo se listan nombres inferidos; la presencia se estima por nombre de archivo en carpetas escaneadas y nunca se acusa a un plugin de causar un cierre.
